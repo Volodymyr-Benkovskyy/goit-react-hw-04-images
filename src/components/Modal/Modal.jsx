@@ -21,7 +21,7 @@ const Modal = ({ imgSrc, closeModal }) =>  {
   return () => {
     window.removeEventListener("keydown", handleCloseByEscape);
   };
- }, []);
+ }, [closeModal]);
   
  
     return createPortal(
