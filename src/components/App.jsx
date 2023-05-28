@@ -25,6 +25,7 @@ const App = () => {
     setPage(prev => prev + 1);
   };
 
+  useEffect(() => {
   const getSearched = async () => {
     setIsLoading(true);
     try {
@@ -37,12 +38,11 @@ const App = () => {
     }
   };
 
-  useEffect(() => {
-    if (query !== '' || page !== 1) {
-      getSearched();
-    }
+  if (query !== '' || page !== 1) {
+    getSearched();
+  }
   }, [query, page]);
-
+  
   const modalOpen = largeImageURL => {
     setIsOpenModal(true);
     setImgSrc(largeImageURL);
